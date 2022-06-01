@@ -1,0 +1,4 @@
+data_file = open('log.txt', encoding='utf-8')
+data = sorted([m[m.find('sid=/') + len('sid=/'): m.find('/&type')]
+                 for m in data_file.readlines() if m.startswith('10.1.192.38')])
+print(*data, sep='\n')

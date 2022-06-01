@@ -1,0 +1,21 @@
+[Unit]
+Description=JavaUnit
+[Service]
+User=root
+# The configuration file application.properties should be here:
+
+#change this to your workspace
+WorkingDirectory=/home/mike/DevOps_task/
+
+#path to executable. 
+#executable is a bash script which calls jar file
+ExecStart=/home/mike/DevOps_task/DevOps_task.sh
+
+#SuccessExitStatus=1
+#TimeoutStopSec=10
+Restart=always
+RestartPreventExitStatus=1
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
